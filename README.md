@@ -62,6 +62,10 @@ If you need to connect to a private network (i.e. no broadcast SSID) include the
 NOTE If you want to connect to different networks (e.g. at work or home) you can include multiple network={⋯} entries.
 There are many other options which can be used see man wpa_supplicant.conf.
 
+Reboot for the changes to take effect:
+
+    sudo reboot
+
 # Acknolagenmet:
 
   Thanks Miliway for this, I hope your solution can help a lot of people here.
