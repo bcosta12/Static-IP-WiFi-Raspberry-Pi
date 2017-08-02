@@ -1,31 +1,31 @@
-# Static-IP-WiFi-Raspberry-Pi
+Let's do it # Static-IP-WiFi-Raspberry-Pi
 
  This is tutorial explain how to set static IP on Raspberry Pi 3B. My objective is to save this knowledge and future users can find this solution here too. 
 
 # Static Address
 
-Go to /etc/network/interfaces, shoud be like this on Raspbian:
+Go to /etc/network/interfaces, should be like this on Raspbian:
 
-      #interfaces(5) file used by ifup(8) and ifdown(8)
+    #interfaces(5) file used by ifup(8) and ifdown(8)
 
-      #Please note that this file is written to be used with dhcpcd
-      #For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+    #Please note that this file is written to be used with dhcpcd
+    #For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
 
-      #Include files from /etc/network/interfaces.d:
-      source-directory /etc/network/interfaces.d
+    #Include files from /etc/network/interfaces.d:
+    source-directory /etc/network/interfaces.d
 
-      auto lo  
-      iface lo inet loopback
+    auto lo  
+    iface lo inet loopback
 
-      iface eth0 inet manual
+    iface eth0 inet manual
 
-      allow-hotplug wlan0
-      iface wlan0 inet manual
-        wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+    allow-hotplug wlan0
+    iface wlan0 inet manual
+      wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 
-      allow-hotplug wlan1
-      iface wlan1 inet manual
-        wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+    allow-hotplug wlan1
+    iface wlan1 inet manual
+      wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 
 Change wlan0 config to static address:
 
@@ -38,7 +38,7 @@ Change wlan0 config to static address:
 
 address: is the address from the command above (or another unused address on the same network),
 netmask: 255.255.255.0 corresponds to network size/24.
-gateway: is the address of your router (or gateway).
+gateway: address of your router (or gateway).
 
 The broadcast is automatically derived from address and netmask and need not be specified.
 For more detail see https://wiki.debian.org/NetworkConfiguration
@@ -64,7 +64,7 @@ There are many other options which can be used see man wpa_supplicant.conf.
 
 # Acknolagenmet:
 
-  Thanks Miliway for this, I hope your solution can help a lot of people here..
+  Thanks Miliway for this, I hope your solution can help a lot of people here.
 
 bib:
 ----
